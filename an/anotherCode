@@ -1,0 +1,13 @@
+//    public static boolean isError (String str) {
+//        Pattern p = Pattern.compile("ERROR (\\d{3})");
+//        Matcher m = p.matcher(str);
+//
+//        return m.find();
+//    }
+//    public static String getVersion (String str) {
+//        Pattern p = Pattern.compile("-([\\d.]+)\\.jar");
+//        Matcher m = p.matcher(str);
+//
+//        return m.find() ? m.group(1) : "Version not found!";
+//    }
+}
