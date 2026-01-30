@@ -33,9 +33,9 @@ class MainTest {
     @Test
     void testMatchUp() {
         Main main = new Main();
-        assertEquals(main.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 10}), 2);
-        assertEquals(main.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 5}), 3);
-        assertEquals(main.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 3}), 2);
+        assertEquals(2, main.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 10}));
+        assertEquals(3, main.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 5}));
+        assertEquals(2, main.matchUp(new int[]{1, 2, 3}, new int[]{2, 3, 3}));
     }
 
     @Test

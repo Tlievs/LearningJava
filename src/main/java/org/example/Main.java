@@ -28,13 +28,12 @@ public class Main {
     }
 
     public boolean isEverywhere(int[] nums, int val) {
-        boolean isValInNums = true;
         for (int i = 0; i < nums.length - 1; i++) {
             if (nums[i] != val && nums[i + 1] != val) {
-                isValInNums = false;
+                return false;
             }
         }
-        return isValInNums;
+        return true;
     }
 
     public int matchUp(int[] nums1, int[] nums2) {
@@ -66,12 +65,12 @@ public class Main {
 
     public boolean has12(int[] nums) {
         boolean isOneFound = false;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 1) {
+        for (int num : nums) {
+            if (num == 1) {
                 isOneFound = true;
                 continue;
             }
-            if (isOneFound && nums[i] == 2) {
+            if (isOneFound && num == 2) {
                 return true;
             }
         }
