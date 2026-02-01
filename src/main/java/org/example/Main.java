@@ -176,9 +176,9 @@ public class Main {
     public int[] withoutTen(int[] nums) {
         int[] result = new int[nums.length];
         int pos = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != 10) {
-                result[pos] = nums[i];
+        for (int num : nums) {
+            if (num != 10) {
+                result[pos] = num;
                 pos++;
             }
         }
@@ -222,12 +222,12 @@ public class Main {
         int startPos = 0;
         int endPos = nums.length - 1;
         int[] result = new int[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 0) {
-                result[startPos] = nums[i];
+        for (int num : nums) {
+            if (num == 0) {
+                result[startPos] = num;
                 startPos++;
             } else {
-                result[endPos] = nums[i];
+                result[endPos] = num;
                 endPos--;
             }
         }
@@ -251,12 +251,12 @@ public class Main {
         int[] result = new int[nums.length];
         int posStart = 0;
         int posEnd = nums.length - 1;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] % 2 == 0) {
-                result[posStart] = nums[i];
+        for (int num : nums) {
+            if (num % 2 == 0) {
+                result[posStart] = num;
                 posStart++;
             } else {
-                result[posEnd] = nums[i];
+                result[posEnd] = num;
                 posEnd--;
             }
         }
@@ -280,7 +280,6 @@ public class Main {
             if (i % 3 == 0) {
                 result[pos] = "Fizz";
                 pos++;
-                continue;
             } else {
                 result[pos] = String.valueOf(i);
                 pos++;
