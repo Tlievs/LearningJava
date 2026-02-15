@@ -3,7 +3,6 @@ package org.example;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class MainTest {
     @Test
@@ -70,6 +69,56 @@ class MainTest {
         assertTrue(main.haveThree(new int[]{3, 1, 3, 1, 3}));
         assertFalse(main.haveThree(new int[]{3, 1, 3, 3}));
         assertFalse(main.haveThree(new int[]{3, 4, 3, 3, 4}));
+    }
+
+    @Test
+    void testLoneSum() {
+        Main main = new Main();
+        assertEquals(6, main.loneSum(1, 2, 3));
+        assertEquals(2, main.loneSum(3, 2, 3));
+        assertEquals(0, main.loneSum(3, 3, 3));
+    }
+
+    @Test
+    void testLuckySum() {
+        Main main = new Main();
+        assertEquals(6, main.luckySum(1, 2, 3));
+        assertEquals(3, main.luckySum(1, 2, 13));
+        assertEquals(1, main.luckySum(1, 13, 3));
+        assertEquals(0, main.luckySum(13, 2, 3));
+    }
+
+    @Test
+    void testNoTeenSum() {
+        Main main = new Main();
+        assertEquals(6, main.noTeenSum(1, 2, 3));
+        assertEquals(3, main.noTeenSum(2, 13, 1));
+        assertEquals(3, main.noTeenSum(2, 1, 14));
+    }
+
+    @Test
+    void testRoundSum() {
+        Main main = new Main();
+        assertEquals(60, main.roundSum(16, 17, 18));
+        assertEquals(30, main.roundSum(12, 13, 14));
+        assertEquals(10, main.roundSum(6, 4, 4));
+    }
+
+    @Test
+    void testCloseFar() {
+        Main main = new Main();
+        assertTrue(main.closeFar(1, 2, 10));
+        assertFalse(main.closeFar(1, 2, 3));
+        assertTrue(main.closeFar(4, 1, 3));
+    }
+
+    @Test
+    void testEvenlySpaced() {
+        Main main = new Main();
+        assertTrue(main.evenlySpaced(2, 4, 6));
+        assertTrue(main.evenlySpaced(2, 4, 6));
+        assertFalse(main.evenlySpaced(4, 6, 3));
+        assertTrue(main.evenlySpaced(0, 0, 0));
     }
 
     @Test

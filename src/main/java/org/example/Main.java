@@ -104,6 +104,70 @@ public class Main {
         return counter == 3;
     }
 
+    public int loneSum(int a, int b, int c) {
+        if (a == b && b == c) {
+            return 0;
+        }
+        if (a == b || b == c || a == c) {
+            if (a == b) {
+                return c;
+            } else if (b == c) {
+                return a;
+            } else {
+                return b;
+            }
+        }
+        return a + b + c;
+    }
+
+    public int luckySum (int a, int b, int c) {
+        if (a == 13) {
+            return 0;
+        }
+        if (b == 13) {
+            return a;
+        }
+        if (c == 13) {
+            return a + b;
+        }
+        return a + b + c;
+    }
+
+    public int noTeenSum(int a, int b, int c) {
+        return fixTeen(a) + fixTeen(b) + fixTeen(c);
+    }
+
+    public int fixTeen (int number) {
+        return (number >= 13 && number <= 19 && number != 15 && number != 16) ? 0 : number;
+    }
+
+    public int roundSum(int a, int b, int c) {
+        return roundNumber(a) + roundNumber(b) + roundNumber(c);
+    }
+
+    public int roundNumber(int number) {
+        return ((number + 5) / 10) * 10;
+    }
+
+    public boolean closeFar(int a, int b, int c) {
+        return (isClose(a, b) && isFar(c, a, b)) || (isClose(c, a) && isFar(b, a, c));
+    }
+
+    public boolean isClose(int a, int b) {
+        return Math.abs(a - b) <= 1;
+    }
+
+    public boolean isFar(int a, int b, int c) {
+        return Math.abs(a - b) >= 2 && Math.abs(a - c) >= 2;
+    }
+
+    public boolean evenlySpaced(int a, int b, int c) {
+        int max = Math.max(a, Math.max(b, c));
+        int min = Math.min(a, Math.min(b, c));
+        int mid = a + b + c - max - min;
+        return Math.abs(max - mid) == Math.abs(min - mid);
+    }
+
     public boolean twoTwo(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 2) {
