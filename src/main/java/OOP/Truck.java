@@ -1,6 +1,7 @@
 package OOP;
 
 public class Truck extends Car{
+
     private int loadCapacity;
 
     public Truck(String model, int maxSpeed, int loadCapacity) {
