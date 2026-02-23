@@ -64,6 +64,11 @@ public abstract class Book {
     }
 
     public String getBookInfo() {
-        return String.format("Book title: %s%nBook ISBN: %s%nBook author: %s%nIs book available:%b%n Book type: %s", getTitle(), getIsbn(), getAuthor(), isAvailable(), getBookType());
+        return String.format("%nBook title: %s%nBook ISBN: %s%nBook author: %s%nIs book available: %b%nBook type: %s ", getTitle(), getIsbn(), getAuthor(), isAvailable(), getBookType());
+    }
+
+    @Override
+    public String toString(){
+        return getBookInfo();
     }
 }

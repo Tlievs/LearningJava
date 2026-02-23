@@ -61,14 +61,38 @@ public class Library {
         System.out.println("Book " + book.getTitle() + " was returned by " + user.getUserName());
     }
 
-    public void findBookByTitle(String title) {
+    public List<Book> findBookByTitle(String title) {
+        List<Book> result = new ArrayList<>();
+        title = title.toLowerCase();
         for (Book librarybook : catalog) {
-            if (librarybook.getTitle().equals(title)) {
-                System.out.println("Book found!");
-                System.out.println(librarybook.getBookInfo());
-                return;
+            if (librarybook.getTitle().toLowerCase().contains(title)) {
+                result.add(librarybook);
             }
         }
-        System.out.println("Book not found!");
+        return result;
+    }
+    public List<Book> findBookByAuthor(String author) {
+        List<Book> result = new ArrayList<>();
+        author = author.toLowerCase();
+        for (Book librarybook : catalog) {
+            if (librarybook.getAuthor().toLowerCase().contains(author)) {
+                result.add(librarybook);
+            }
+        }
+        return result;
+    }
+
+    public String getLibraryStatistics() {
+        int[] result = new int[3];
+        for (Book libraryBook : catalog) {
+            result[0]++;
+            if (libraryBook.isAvailable()) {
+                result[1]++;
+            }
+            if(!libraryBook.isAvailable()) {
+                result[2]++;
+            }
+        }
+        return String.format("Total books: %d%nAvailable books: %d%nRented books: %d%n", result[0], result[1], result[2]);
     }
 }

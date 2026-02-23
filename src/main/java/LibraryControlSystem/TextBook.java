@@ -22,6 +22,6 @@ public class TextBook extends Book {
 
     @Override
     public String getBookInfo() {
-        return super.getBookInfo() + String.format("Text book subject: %s", getSubject());
+        return super.getBookInfo() + String.format("%nText book subject: %s%n", getSubject());
     }
 }

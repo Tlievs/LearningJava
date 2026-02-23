@@ -22,6 +22,6 @@ public class FictionBook extends Book{
 
     @Override
     public String getBookInfo() {
-        return super.getBookInfo() + String.format("Fiction book genre: %s", getGenre());
+        return super.getBookInfo() + String.format("%nFiction book genre: %s%n", getGenre());
     }
 }

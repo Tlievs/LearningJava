@@ -22,6 +22,6 @@ public class ReferenceBook extends Book {
 
     @Override
     public String getBookInfo() {
-        return super.getBookInfo() + String.format("Reference book country: %s", getCountry());
+        return super.getBookInfo() + String.format("%nReference book country: %s%n", getCountry());
     }
 }
