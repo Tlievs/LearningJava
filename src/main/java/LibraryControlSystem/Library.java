@@ -83,16 +83,15 @@ public class Library {
     }
 
     public String getLibraryStatistics() {
-        int[] result = new int[3];
+        int totalBooks = 0, availableBooks = 0, rentedBooks = 0;
         for (Book libraryBook : catalog) {
-            result[0]++;
+            totalBooks++;
             if (libraryBook.isAvailable()) {
-                result[1]++;
-            }
-            if(!libraryBook.isAvailable()) {
-                result[2]++;
+                availableBooks++;
+            } else {
+                rentedBooks++;
             }
         }
-        return String.format("Total books: %d%nAvailable books: %d%nRented books: %d%n", result[0], result[1], result[2]);
+        return String.format("Total books: %d%nAvailable books: %d%nRented books: %d%n", totalBooks, availableBooks, rentedBooks);
     }
 }
