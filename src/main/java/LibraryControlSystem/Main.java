@@ -14,8 +14,8 @@ public class Main {
         lib.addBook(spravochnik);
         lib.addUser(daniel);
 //        System.out.println(lib.findBookByTitle("b"));
-//        System.out.println(lib.findBookByAuthor("b"));
-        lib.rentBook(daniel, beethoven);
+        System.out.println(lib.findBookByAuthor("baaa"));
+//        lib.rentBook(daniel, beethoven);
 //        lib.returnBook(daniel, beethoven);
 //        lib.returnBook(daniel, beethoven);
 //        lib.rentBook(daniel, spravochnik);
