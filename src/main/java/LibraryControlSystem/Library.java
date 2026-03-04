@@ -1,6 +1,5 @@
 package LibraryControlSystem;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Library {
     private List<Book> catalog = new ArrayList<>();
@@ -93,5 +92,20 @@ public class Library {
             }
         }
         return String.format("Total books: %d%nAvailable books: %d%nRented books: %d%n", totalBooks, availableBooks, rentedBooks);
+    }
+
+    public Map<String, List<Book>> bookAnalitic(List<Book> books) {
+        Set<Book> uniqueBooks = new LinkedHashSet<>(books);
+        List<Book> sortedBooks = new ArrayList<>(uniqueBooks);
+        sortedBooks.sort(Comparator.comparing(Book::getTitle));
+        Map<String, List<Book>> groupedByAuthor = new HashMap<>();
+        for (Book book : sortedBooks) {
+            String author = book.getAuthor();
+            if (!groupedByAuthor.containsKey(author)) {
+                groupedByAuthor.put(author, new ArrayList<>());
+            }
+            groupedByAuthor.get(author).add(book);
+        }
+        return groupedByAuthor;
     }
 }
